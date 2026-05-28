@@ -92,6 +92,21 @@
   .legend .d-deploy{background:var(--accent)}
   .legend .d-sprint{background:#666}
 
+  .eligibility .eligibility-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    padding:18px 20px;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;
+  }
+  .eligibility-label{
+    color:var(--accent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+    white-space:nowrap;
+  }
+  .eligibility-text{color:var(--fg);font-size:15px;line-height:1.5;flex:1;min-width:220px}
+  .eligibility-text b{color:var(--fg);font-weight:600}
+
   footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   footer span b{color:var(--fg)}
   .design-credit{flex-basis:100%;text-align:center;color:var(--fg);font-size:13px;letter-spacing:.02em;margin-top:10px}
@@ -255,6 +270,15 @@
         <span class="tag sprint">Capstone Sprint</span>
       </div>
 
+    </div>
+  </section>
+
+  <section class="eligibility">
+    <h2>Who Should <span class="num">Apply</span></h2>
+    <p class="sub">Suitable for students and working adults.</p>
+    <div class="eligibility-card">
+      <span class="eligibility-label">Prerequisite</span>
+      <span class="eligibility-text"><b>Basic Python</b> — variables, loops, functions, classes, and standard built-in methods. No computer science degree required.</span>
     </div>
   </section>
 
