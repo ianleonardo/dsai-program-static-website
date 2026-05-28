@@ -4,31 +4,31 @@
   /* Colors from DESIGN.md */
   --bg: #fcf9f8;
   --fg: #1b1c1c;
-  
+
   --primary: #ad002f;
   --primary-container: #d71440;
   --secondary: #565991;
   --secondary-container: #bcbffe;
-  
+
   --heritage-red: #D71440;
   --deep-navy: #181B50;
   --ink-black: #222222;
   --pure-white: #FFFFFF;
-  
+
   --surface-container-lowest: #ffffff;
   --surface-container-low: #f6f3f2;
   --surface-container: #f0eded;
   --surface-container-high: #eae7e7;
   --surface-container-highest: #e5e2e1;
-  
+
   --outline: #906f6f;
   --outline-variant: #e5bdbd;
   --outline-light: #E5E5E5;
-  
+
   /* Typography */
   --font-headline: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
+
   /* Radii */
   --radius-sm: 0.125rem;
   --radius-default: 0.25rem;
@@ -36,18 +36,21 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-full: 9999px;
-  
+
   /* Spacing */
   --unit: 8px;
   --container-max: 1280px;
   --gutter: 24px;
+  --margin-desktop: 64px;
+  --margin-mobile: 20px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
@@ -342,7 +345,8 @@ h2 .num {
   font-size: 14px;
   color: var(--secondary);
   line-height: 1.45;
-  margin-bottom: auto; /* Pushes the tags to the bottom */
+  margin-bottom: auto;
+  /* Pushes the tags to the bottom */
 }
 
 /* Tag Styles */
@@ -422,42 +426,72 @@ h2 .num {
   font-weight: 700;
 }
 
-/* Footer Styling */
-footer {
+/* Page Footer Styling */
+.page-footer {
+  width: 100%;
+  background-color: #002855; /* NTU Styled Deep Blue */
+  color: rgb(255, 255, 255);
   margin-top: 80px;
-  padding: 32px 0;
+  padding: 48px 0;
   border-top: 1px solid var(--outline-variant);
-  color: var(--secondary);
-  font-size: 13px;
+  font-family: var(--font-body);
+}
+
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 0 var(--margin-desktop);
+  }
+}
+
+.footer-info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-footer span b {
-  color: var(--deep-navy);
-}
-
-.design-credit {
-  flex-basis: 100%;
+  justify-content: space-between;
+  gap: 24px;
   text-align: center;
-  color: var(--ink-black);
-  font-size: 13px;
-  letter-spacing: 0.01em;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px dashed var(--outline-variant);
+  font-size: 10px;
+  font-weight: 500;
+  color: #d1d5db; /* gray-300 */
+  text-transform: uppercase;
+  letter-spacing: 0.16em; /* tracking-widest */
 }
 
-.design-credit .label {
-  color: var(--heritage-red);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+@media (min-width: 768px) {
+  .footer-info {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.footer-info .highlight {
+  color: var(--pure-white);
   font-weight: 700;
-  margin-right: 8px;
+}
+
+.footer-designer {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.footer-designer p {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--heritage-red); /* ntu-red */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.footer-designer .highlight {
+  color: var(--pure-white);
+  font-weight: 700;
 }
 
 /* Media Queries */
@@ -465,9 +499,11 @@ footer span b {
   header.top {
     padding: 32px;
   }
+
   h1 {
     font-size: 32px;
   }
+
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
@@ -478,20 +514,16 @@ footer span b {
     padding: 24px;
     border-top-width: 4px;
   }
+
   h1 {
     font-size: 26px;
   }
+
   .lede {
     font-size: 16px;
   }
+
   .grid {
     grid-template-columns: 1fr;
-  }
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .design-credit {
-    text-align: left;
   }
 }
